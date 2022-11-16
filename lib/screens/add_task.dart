@@ -19,6 +19,7 @@ class AddTaskScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
+              key: Key('titleTextField'),
               controller: _titleCtrl,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -27,6 +28,7 @@ class AddTaskScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             TextField(
+              key: Key('descTextField'),
               controller: _descCtrl,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
@@ -35,6 +37,7 @@ class AddTaskScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             ElevatedButton(
+              key: Key('addTaskButton'),
               onPressed: () {
                 Provider.of<TodoProvider>(
                   context,

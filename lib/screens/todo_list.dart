@@ -43,6 +43,7 @@ class TodoListScreen extends StatelessWidget {
                             },
                           ),
                           IconButton(
+                            key: Key("deleteButton_$index"),
                             icon: const Icon(Icons.delete),
                             onPressed: () {
                               obj.deleteTask(index);
@@ -59,6 +60,7 @@ class TodoListScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        key: Key('addTaskFAB'),
         child: const Icon(Icons.add),
         onPressed: () {
           Navigator.push(
