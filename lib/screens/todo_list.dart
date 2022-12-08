@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp/providers/todo_provider.dart';
-import '../custom-widgets/status_card.dart';
-import '../model/task.dart';
-import 'add_task.dart';
+import 'package:todoapp/custom-widgets/status_card.dart';
+import 'package:todoapp/model/task.dart';
+import 'package:todoapp/screens/add_task.dart';
 
 class TodoListScreen extends StatelessWidget {
   const TodoListScreen({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class TodoListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Todo List"),
+        title: const Text('Todo List'),
       ),
       body: Column(
         children: [
@@ -43,7 +43,7 @@ class TodoListScreen extends StatelessWidget {
                             },
                           ),
                           IconButton(
-                            key: Key("deleteButton_$index"),
+                            key: Key('deleteButton_$index'),
                             icon: const Icon(Icons.delete),
                             onPressed: () {
                               obj.deleteTask(index);
@@ -60,7 +60,7 @@ class TodoListScreen extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        key: Key('addTaskFAB'),
+        key: const Key('addTaskFAB'),
         child: const Icon(Icons.add),
         onPressed: () {
           Navigator.push(

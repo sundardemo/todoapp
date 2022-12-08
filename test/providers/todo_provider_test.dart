@@ -6,14 +6,14 @@ void main() {
   setUp(() {
     todoProvider = TodoProvider();
   });
-  group("Todo Check List", () {
-    test("Add New Task", () {
-      todoProvider.addTask("Hello", "World");
+  group('Todo Check List', () {
+    test('Add New Task', () {
+      todoProvider.addTask('Hello', 'World');
       expect(todoProvider.getTaskCount, 1);
     });
 
-    test("Delete Task", () {
-      todoProvider.addTask("Hello", "World");
+    test('Delete Task', () {
+      todoProvider.addTask('Hello', 'World');
       todoProvider.deleteTask(0);
       expect(todoProvider.getTaskCount, 0);
     });

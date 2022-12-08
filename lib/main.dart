@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp/providers/todo_provider.dart';
-import 'screens/todo_list.dart';
+import 'package:todoapp/screens/webview_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,11 +18,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => TodoProvider()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Flutter Dem',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const TodoListScreen(),
+        home: const WebViewExample(),
       ),
     );
   }

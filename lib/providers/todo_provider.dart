@@ -15,7 +15,7 @@ class TodoProvider extends ChangeNotifier {
   //   return tasks.length;
   // }
 
-  get getTaskCount => tasks.length;
+  int get getTaskCount => tasks.length;
 
   // set setDummy(n) => dummyNumber = n;
   // setDummy(n){

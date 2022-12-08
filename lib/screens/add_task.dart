@@ -11,7 +11,7 @@ class AddTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add Task"),
+        title: const Text('Add Task'),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
@@ -19,32 +19,32 @@ class AddTaskScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
-              key: Key('titleTextField'),
+              key: const Key('titleTextField'),
               controller: _titleCtrl,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "Title",
+                labelText: 'Title',
               ),
             ),
             const SizedBox(height: 8),
             TextField(
-              key: Key('descTextField'),
+              key: const Key('descTextField'),
               controller: _descCtrl,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "Description",
+                labelText: 'Description',
               ),
             ),
             const SizedBox(height: 8),
             ElevatedButton(
-              key: Key('addTaskButton'),
+              key: const Key('addTaskButton'),
               onPressed: () {
                 Provider.of<TodoProvider>(
                   context,
                   listen: false,
                 ).addTask(_titleCtrl.text, _descCtrl.text);
               },
-              child: const Text("Add Task"),
+              child: const Text('Add Task'),
             )
           ],
         ),

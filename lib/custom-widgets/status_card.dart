@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/todo_provider.dart';
+import 'package:todoapp/providers/todo_provider.dart';
 
 class StatusCard extends StatelessWidget {
   const StatusCard({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class StatusCard extends StatelessWidget {
           children: [
             Column(
               children: [
-                const Text("Total"),
+                const Text('Total'),
                 const SizedBox(height: 8),
                 Text(
                   Provider.of<TodoProvider>(context).getTaskCount.toString(),
@@ -29,7 +29,7 @@ class StatusCard extends StatelessWidget {
             ),
             Column(
               children: [
-                const Text("Completed"),
+                const Text('Completed'),
                 const SizedBox(height: 8),
                 Text(
                   Provider.of<TodoProvider>(context)
