@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todoapp/providers/sqlite_demo.dart';
 import 'package:todoapp/providers/todo_provider.dart';
 import 'package:todoapp/custom-widgets/status_card.dart';
 import 'package:todoapp/model/task.dart';
@@ -17,6 +18,24 @@ class TodoListScreen extends StatelessWidget {
       body: Column(
         children: [
           const StatusCard(),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     SQLiteHelper().init();
+          //   },
+          //   child: const Text("Init Table"),
+          // ),
+          ElevatedButton(
+            onPressed: () {
+              SQLiteHelper().createTable();
+            },
+            child: const Text("Create Table"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              SQLiteHelper().readData();
+            },
+            child: const Text("Read Table"),
+          ),
           Expanded(
             child: Consumer<TodoProvider>(
               builder: ((context, obj, child) {
@@ -32,12 +51,12 @@ class TodoListScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           IconButton(
-                            icon: task.isCompleted
+                            icon: task.isCompleted!
                                 ? const Icon(Icons.check_box)
                                 : const Icon(
                                     Icons.check_box_outline_blank_outlined),
                             onPressed: () {
-                              tasks[index].isCompleted
+                              tasks[index].isCompleted!
                                   ? obj.markAsInComplete(index)
                                   : obj.markAsComplete(index);
                             },

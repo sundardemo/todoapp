@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todoapp/model/task.dart';
+import 'package:todoapp/providers/sqlite_demo.dart';
 import 'package:todoapp/providers/todo_provider.dart';
 
 class AddTaskScreen extends StatelessWidget {
@@ -39,10 +41,12 @@ class AddTaskScreen extends StatelessWidget {
             ElevatedButton(
               key: const Key('addTaskButton'),
               onPressed: () {
-                Provider.of<TodoProvider>(
-                  context,
-                  listen: false,
-                ).addTask(_titleCtrl.text, _descCtrl.text);
+                // Provider.of<TodoProvider>(
+                //   context,
+                //   listen: false,
+                // ).addTask(_titleCtrl.text, _descCtrl.text);
+                SQLiteHelper().insertData(
+                    Task(title: _titleCtrl.text, description: _descCtrl.text));
               },
               child: const Text('Add Task'),
             )

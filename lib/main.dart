@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todoapp/providers/todo_provider.dart';
+import 'package:todoapp/screens/todo_list.dart';
 import 'package:todoapp/screens/webview_example.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const WebViewExample(),
+        home: const TodoListScreen(),
       ),
     );
   }
